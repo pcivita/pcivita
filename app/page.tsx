@@ -1,4 +1,5 @@
 import BentoGrid from "@/components/BentoGrid";
+import BentoMobile from "@/components/BentoMobile";
 
 export default function Home() {
   return (
@@ -28,8 +29,8 @@ export default function Home() {
           </div>
 
           {/* Right Side */}
-          <div className="flex justify-center items-center border-2 w-1/3">
-            <div className="rounded-full overflow-hidden border-8 border-background-light ">
+          <div className="flex justify-center items-center  w-1/3">
+            <div className="rounded-full overflow-hidden  border-background-light ">
               <img
                 src="/profilePic.jpg"
                 alt="Pedro Civita"
@@ -43,8 +44,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-background-light h-1/2 w-full">
-        <BentoGrid />
+      <div className="bg-background-light h-1/2 w-full mt-10">
+        <BentoMobile />
+        {/* <BentoGrid/> */}
       </div>
     </div>
   );
