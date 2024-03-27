@@ -1,25 +1,33 @@
+"use client";
 import BentoGrid from "@/components/BentoGrid";
 import BentoMobile from "@/components/BentoMobile";
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons/component";
+import { useState } from "react";
 import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
+import Navbar from "@/components/Navbar";
 
 // TODO: Chhange IMAGE W and H
+// TODO: IMAGE SIZE, TOO LONG TO LOAD
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col">
+      <Navbar open={open} setOpen={setOpen} />
       {/* Header */}
       <div className="flex flex-col bg-background-dark p-4 gap-4">
         {/* Image */}
-        <div className="flex border-black border-2 align-middle justify-center">
-          <div className="w-44 h-44 relative rounded-full overflow-hidden border-8 border-white">
+        <div className="flex border-black border-2 align-middle justify-center ">
+          <div className="w-44 h-44  rounded-full overflow-hidden border-8 border-white ">
             <Image
               src={"/Images/profilePic.JPG"}
               alt="Profile Pic"
-              layout="fill" // Changed to 'fill' to ensure the image covers the entire area of the container
-              objectFit="cover" // This will make sure the image covers the container while maintaining aspect ratio
+              layout="responsive"
+              width={1} // Aspect ratio's width
+              height={1} // Aspect ratio's height, keeping it 1:1
+              // className="object-cover" // Ensure this for responsive images, but it's more useful with layout="fill"
             />
           </div>
         </div>
