@@ -5,36 +5,88 @@ import Image from "next/image";
 
 export default function BentoMobile() {
   return (
-    <div className="flex h-screen items-center justify-center bg-slate-200">
-      <div className="flex flex-col items-center justify-center bg-slate-200 md:grid md:w-3/4 md:grid-cols-4 md:gap-4">
-        {/* Flex layout for mobile, switches to grid layout for md and up */}
-        <Link
-          href={"/Muse"}
-          className="rounded-xl border-slate-400/10 bg-neutral-100 dark:bg-neutral-900"
+    <div className="flex flex-col items-center justify-center bg-white gap-4">
+      <Link
+        href={"/Muse"}
+        className="bg-red-200 w-full  flex flex-col items-center justify-center p-4"
+      >
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="flex flex-col items-center justify-center"
         >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg bg-white flex flex-col items-center"
-          >
-            <Image
-              src={"/Images/muse.svg"}
-              alt="Muse"
-              layout="fill"
-              objectFit="contain"
-              className="p-4"
-              // Ensure the image doesn't take the entire height so there's space for the text below
-              style={{ maxHeight: "80%" }} // Adjust this percentage as needed
-            />
-            <div className="text-center p-4">
-              {" "}
-              {/* Added padding for some spacing */}
-              <h1>Muse</h1>
-              <h2>Letterboxd for Museums</h2>
-            </div>
-          </motion.div>
-        </Link>
-        {/* Repeat for other Links/components as needed */}
-      </div>
+          <Image
+            src={"/Images/muse.svg"}
+            alt="Muse"
+            layout="responsive" // 'responsive' layout will respect the width of the parent, and the height will adjust to maintain the image's aspect ratio
+            width={1} // Setting width and height to 1 maintains the aspect ratio
+            height={1}
+            className="w-full" // This will make the image take the full width of its parent
+          />
+
+          <div className="text-center">
+            {" "}
+            {/* This centers the text horizontally */}
+            <h1 className="text-xl font-bold">Muse</h1>{" "}
+            {/* Adjust font-size and weight as needed */}
+            <h2 className="text-base">Letterboxd for Museums</h2>{" "}
+            {/* Adjust font-size as needed */}
+          </div>
+        </motion.div>
+      </Link>
+      <Link
+        href={"/Muse"}
+        className="bg-red-200 w-full  flex flex-col items-center justify-center p-4"
+      >
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="flex flex-col items-center justify-center"
+        >
+          <Image
+            src={"/Images/muse.svg"}
+            alt="Muse"
+            layout="responsive" // 'responsive' layout will respect the width of the parent, and the height will adjust to maintain the image's aspect ratio
+            width={1} // Setting width and height to 1 maintains the aspect ratio
+            height={1}
+            className="w-full" // This will make the image take the full width of its parent
+          />
+
+          <div className="text-center">
+            {" "}
+            {/* This centers the text horizontally */}
+            <h1 className="text-xl font-bold">Muse</h1>{" "}
+            {/* Adjust font-size and weight as needed */}
+            <h2 className="text-base">Letterboxd for Museums</h2>{" "}
+            {/* Adjust font-size as needed */}
+          </div>
+        </motion.div>
+      </Link>
+      <Link
+        href={"/Muse"}
+        className="bg-red-200 w-full  flex flex-col items-center justify-center p-4"
+      >
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="flex flex-col items-center justify-center"
+        >
+          <Image
+            src={"/Images/muse.svg"}
+            alt="Muse"
+            layout="responsive" // 'responsive' layout will respect the width of the parent, and the height will adjust to maintain the image's aspect ratio
+            width={1} // Setting width and height to 1 maintains the aspect ratio
+            height={1}
+            className="w-full" // This will make the image take the full width of its parent
+          />
+
+          <div className="text-center">
+            {" "}
+            {/* This centers the text horizontally */}
+            <h1 className="text-xl font-bold">Muse</h1>{" "}
+            {/* Adjust font-size and weight as needed */}
+            <h2 className="text-base">Letterboxd for Museums</h2>{" "}
+            {/* Adjust font-size as needed */}
+          </div>
+        </motion.div>
+      </Link>
     </div>
   );
 }
