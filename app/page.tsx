@@ -26,7 +26,8 @@ export default function Home() {
         {/* Name */}
         <div className="border-black border-2">
           <h1 className="text-5xl text-text-dark font-bold">
-            Hi, I'm <span className="text-background-light">Pedro Civita.</span>
+            Hi, I&apos;m{" "}
+            <span className="text-background-light">Pedro Civita.</span>
           </h1>
         </div>
         {/* Blurb */}
