@@ -4,11 +4,9 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { title: "What we do", href: "/" },
-  { title: "How it works", href: "/" },
-  { title: "Case studies", href: "/" },
   { title: "About", href: "/" },
-  { title: "Contact", href: "/" },
+  { title: "Play", href: "/" },
+  { title: "Links", href: "/" },
 ];
 // Define the types for the props
 type NavbarProps = {
@@ -73,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ open, setOpen }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen origin-top bg-yellow-400 text-black p-10"
+            className="fixed left-0 top-0 w-full h-[80rem] origin-top bg-yellow-400 text-black p-10"
           >
             <div className="flex h-full flex-col">
               <div className="flex justify-between">
@@ -90,11 +88,14 @@ const Navbar: React.FC<NavbarProps> = ({ open, setOpen }) => {
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="flex flex-col h-full justify-center font-lora items-center gap-4 "
+                className="flex flex-col h-full font-lora items-center gap-4 "
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div className="overflow-hidden" key={index}>
+                    <div
+                      className="overflow-hidden"
+                      key={index}
+                    >
                       <MobileNavLink
                         key={index}
                         title={link.title}
