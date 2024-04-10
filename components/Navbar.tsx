@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ open, setOpen }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-1/2 origin-top bg-yellow-400 text-black p-10"
+            className="fixed left-0 top-0 w-full h-full origin-top bg-yellow-400 text-black p-10"
           >
             <div className="flex h-full flex-col">
               <div className="flex justify-between">
