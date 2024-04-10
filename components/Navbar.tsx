@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
@@ -18,6 +18,15 @@ const Navbar: React.FC<NavbarProps> = ({ open, setOpen }) => {
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
   };
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [open]);
+
   const menuVars = {
     initial: {
       scaleY: 0,
