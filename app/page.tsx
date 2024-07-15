@@ -10,6 +10,8 @@ import Navbar from "@/components/Navbar";
 
 // TODO: Chhange IMAGE W and H
 // TODO: IMAGE SIZE, TOO LONG TO LOAD
+// TODO: MOBILE SAFE AREA --> SET TO WHITE
+// TODO: DEAL WITH SAFARI THINGY GOING DOWN
 
 export default function Home() {
   const [open, setOpen] = useState(false);
