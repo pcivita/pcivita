@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Hamburger from "hamburger-react";
 
 const navLinks = [
   { title: "What we do", href: "/" },
@@ -17,8 +18,11 @@ type NavbarProps = {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ open, setOpen }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
+    setIsOpen((prevOpen) => !prevOpen);
   };
   const menuVars = {
     initial: {
@@ -63,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ open, setOpen }) => {
           className="cursor-pointer lg:hidden text-md text-black"
           onClick={toggleMenu}
         >
-          Menu
+          <Hamburger toggled={isOpen} />
         </div>
       </nav>
       <AnimatePresence>
