@@ -8,20 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        circular: ["CircularStd", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
+
       colors: {
         background: {
           light: "#F4F9FC",
-          dark: "#AADCEC",
+          dark: "#41916C",
+          card: "#1C4332",
+          black: "#081C14",
         },
         text: {
-          light: "#F4F9FC",
-          sub: "#4D6899",
-          dark: "#0F1B61",
+          light: "#FFFFF1",
+          sub_gray: "#B5B5A9",
+          dark: "#081C14",
         },
         purple: "#7F00E0",
       },

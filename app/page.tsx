@@ -8,16 +8,13 @@ import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
 import Navbar from "@/components/Navbar";
 
-// TODO: Chhange IMAGE W and H
-// TODO: IMAGE SIZE, TOO LONG TO LOAD
-
 export default function Home() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-background-dark">
       <Navbar open={open} setOpen={setOpen} />
       {/* Header */}
-      <div className="flex flex-col bg-background-dark p-4 gap-4">
+      <div className="flex flex-col bg-background-dark p-4 gap-4 ">
         {/* Image */}
         <div className="flex border-black border-2 align-middle justify-center ">
           <div className="w-44 h-44  rounded-full overflow-hidden border-8 border-white ">
@@ -27,28 +24,31 @@ export default function Home() {
               layout="responsive"
               width={1} // Aspect ratio's width
               height={1} // Aspect ratio's height, keeping it 1:1
-              // className="object-cover" // Ensure this for responsive images, but it's more useful with layout="fill"
             />
           </div>
         </div>
         {/* Name */}
-        <div className="border-black border-2">
+        <div className="border-black border-2 font-circular">
           <h1 className="text-5xl text-text-dark font-bold">
-            Hi, I&apos;m{" "}
-            <span className="text-background-light">Pedro Civita.</span>
+            Hi, I&apos;m <span className="text-background-light">Pedro.</span>
           </h1>
         </div>
         {/* Blurb */}
-        <div className="border-black border-2">
+        <div className="border-black border-2 font-circular">
           <h1 className="text-5xl text-text-dark font-bold">
-            I blurb, blurb, and blurb.
+            I love to <span className="text-background-light">design</span> and{" "}
+            <span className="text-background-light">develop</span> interfaces.
           </h1>
+          <p className="font-normal">This text uses the CircularStd font.</p>
         </div>
+
         {/* Line */}
-        <div>
+        {/* <div>
           <div className="w-24 h-2 bg-purple my-4"></div>
-        </div>
-        <div>
+        </div> */}
+
+        {/* SubText */}
+        {/* <div>
           <p className="text-2xl font-poppins text-text-sub">
             I’m a Stanford Masters Student Studying{" "}
             <span className="font-bold text-text-dark">
@@ -57,11 +57,11 @@ export default function Home() {
             </span>
             and I love it a lot lot lot lot lot its just the best thing ever.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* WORK */}
-      <div className="bg-background-light w-full p-8">
+      <div className="bg-background-black w-full p-8">
         <div>
           <h1 className="text-center">MY RECENT WORK</h1>
         </div>
