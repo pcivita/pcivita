@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function BentoGrid() {
   return (
-    <div className="flex h-screen items-center justify-center bg-slate-200">
-      <div className="grid h-full w-2/3 grid-cols-4 grid-rows-6 gap-4 bg-slate-200">
+    <div className="flex h-screen items-center justify-center  py-10">
+      <div className="grid h-full w-3/4 grid-cols-4 grid-rows-6 gap-4 ">
         <Link
           href={"/Muse"}
           className={`col-span-2 row-span-4 rounded-xl  border-slate-400/10 bg-neutral-100 
@@ -14,7 +14,7 @@ export default function BentoGrid() {
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg bg-white "
+            className="relative h-full w-full overflow-hidden rounded-lg bg-background-card "
           >
             <Image
               src={"/Images/muse.svg"}
@@ -28,12 +28,12 @@ export default function BentoGrid() {
 
         <Link
           href={"/Muse"}
-          className={`col-span-2 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 
+          className={`col-span-2 row-span-2 rounded-xl  border-slate-400/10 
           dark:bg-neutral-900`}
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg  bg-white"
+            className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
           >
             <Image
               src={"/Images/turno.svg"}
@@ -46,12 +46,12 @@ export default function BentoGrid() {
         </Link>
         <Link
           href={"/Muse"}
-          className={`col-span-2 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 
+          className={`col-span-2 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg  bg-white"
+            className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
           >
             <Image
               src={"/Images/dfg.png"}

@@ -11,13 +11,26 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col bg-background-dark">
-      <Navbar open={open} setOpen={setOpen} />
+    <div className="flex flex-col">
+      {/* Navbar */}
+      {/* <Navbar open={open} setOpen={setOpen} /> */}
       {/* Header */}
-      <div className="flex flex-col bg-background-dark p-4 gap-4 ">
+      <div
+        className="
+      flex
+      flex-col
+      bg-background-dark 
+      p-4 gap-4
+      md:gap-20
+      md:flex-row-reverse
+      md:px-10
+      md:justify-center
+      md:py-20
+      "
+      >
         {/* Image */}
-        <div className="flex border-black border-2 align-middle justify-center ">
-          <div className="w-44 h-44  rounded-full overflow-hidden border-8 border-white ">
+        <div className="w-1/4">
+          <div className="w-full aspect-1 rounded-full overflow-hidden border-4 border-white">
             <Image
               src={"/Images/profilePic.JPG"}
               alt="Profile Pic"
@@ -27,46 +40,42 @@ export default function Home() {
             />
           </div>
         </div>
+
         {/* Name */}
-        <div className="border-black border-2 font-circular">
-          <h1 className="text-5xl text-text-dark font-bold">
+        <div
+          className="font-circular 	
+          md:self-center
+        md:w-1/2"
+        >
+          <h1 className="text-5xl text-text-dark font-bold tracking-wide">
             Hi, I&apos;m <span className="text-background-light">Pedro.</span>
           </h1>
-        </div>
-        {/* Blurb */}
-        <div className="border-black border-2 font-circular">
           <h1 className="text-5xl text-text-dark font-bold">
             I love to <span className="text-background-light">design</span> and{" "}
             <span className="text-background-light">develop</span> interfaces.
           </h1>
-          <p className="font-normal">This text uses the CircularStd font.</p>
         </div>
-
-        {/* Line */}
-        {/* <div>
-          <div className="w-24 h-2 bg-purple my-4"></div>
-        </div> */}
-
-        {/* SubText */}
-        {/* <div>
-          <p className="text-2xl font-poppins text-text-sub">
-            I’m a Stanford Masters Student Studying{" "}
-            <span className="font-bold text-text-dark">
-              {" "}
-              Human Computer Interaction{" "}
-            </span>
-            and I love it a lot lot lot lot lot its just the best thing ever.
-          </p>
-        </div> */}
       </div>
-
-      {/* WORK */}
+      {/* Body */}
       <div className="bg-background-black w-full p-8">
+        {/* Featured Work */}
         <div>
-          <h1 className="text-center">MY RECENT WORK</h1>
+          <h1 className="text-center text-text-light_green font-circular font-bold text-5xl mb-8">
+            FEATURED WORK
+          </h1>
         </div>
-        <BentoMobile />
-        {/* <BentoGrid/> */}
+
+        {/* Featured Grid */}
+        <div>
+          <div className="block md:hidden">
+            <BentoMobile />
+          </div>
+
+          {/* Show BentoGrid on medium and larger screens */}
+          <div className="hidden md:block">
+            <BentoGrid />
+          </div>
+        </div>
       </div>
 
       {/* FOOTER */}

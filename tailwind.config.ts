@@ -22,13 +22,13 @@ const config: Config = {
         },
         text: {
           light: "#FFFFF1",
-          sub_gray: "#B5B5A9",
+          light_green: "#41916C",
           dark: "#081C14",
         },
         purple: "#7F00E0",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
 export default config;
