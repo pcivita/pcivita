@@ -35,7 +35,7 @@ export const ComponentCard = ({ index, hoveredIndex, setHoveredIndex }) => {
   return (
     <motion.div
       layout
-      className={`bg-background-light rounded-md items-center justify-start w-10${
+      className={`bg-background-light rounded-md items-center justify-start w-1${
         isOpen ? "isOpen" : ""
       }`}
       onHoverStart={() => setHoveredIndex(index)}
