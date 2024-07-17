@@ -8,6 +8,7 @@ import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
 import { ComponentContainer } from "@/components/HeaderCards";
 import Navbar from "@/components/Navbar";
+import FlipLink from "@/components/FlipLink";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,6 @@ export default function Home() {
       flex
       flex-col
       bg-background-dark 
-
       md:flex-row-reverse
       md:justify-center
       md:py-20
@@ -45,26 +45,32 @@ export default function Home() {
               priority
             />
           </div> */}
-          <div className="w-56 h-56 overflow-hidden rounded-full">
-            <img
+          <div className="w-80 h-80 overflow-hidden rounded-full border-4 border-background-light">
+            <Image
               src="/Images/profile.jpg"
               alt="Profile Pic"
-              width={1} // Aspect ratio's width
-              height={1} // Aspect ratio's height, keeping it 1:1
+              width={1000} // Aspect ratio's width
+              height={1000} // Aspect ratio's height, keeping it 1:1
               className="object-cover w-full h-full"
             />
           </div>
 
           {/* Name */}
-          <div className="font-circular md:self-center border-2 w-[34rem]">
-            <h1 className="text-6xl text-text-dark font-bold tracking-wide">
-              Hi, I&apos;m <span className="text-text-light">Pedro.</span>
+          <div className="font-circular md:self-center w-[34rem]">
+            <h1
+              className="text-6xl text-text-dark font-bold tracking-wide"
+              style={{
+                lineHeight: 1.2,
+              }}
+            >
+              Hi, I&apos;m <FlipLink>Pedro.</FlipLink>
             </h1>
             <h1 className="text-6xl text-text-dark font-bold">
-              I love to <span className="text-text-light">design</span> and{" "}
-              <span className="text-text-light">develop</span> interfaces.
+              I love to <FlipLink>design</FlipLink> and{" "}
+              <FlipLink>develop</FlipLink> interfaces.
             </h1>
-            <ComponentContainer />
+
+            {/* <ComponentContainer /> */}
           </div>
         </div>
       </div>
