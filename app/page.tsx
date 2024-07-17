@@ -34,26 +34,33 @@ export default function Home() {
         md:gap-20"
         >
           {/* Image */}
-          <div className="w-56">
-            <div className="w-full aspect-1 rounded-full overflow-hidden  border-white">
-              <Image
-                src={"/Images/profile.JPG"}
-                alt="Profile Pic"
-                layout="responsive"
-                width={1} // Aspect ratio's width
-                height={1} // Aspect ratio's height, keeping it 1:1
-                quality={75} // Adjust quality as needed (default is 75)
-                priority
-              />
-            </div>
+          {/* <div className="w-56 h-56 border-2 rounded-full overflow-hidden">
+            <Image
+              src="/Images/profile.JPG"
+              alt="Profile Pic"
+              layout="responsive"
+              width={1} // Aspect ratio's width
+              height={2} // Aspect ratio's height, keeping it 1:1
+              className="object-fit w-full h-screen"
+              priority
+            />
+          </div> */}
+          <div className="w-56 h-56 overflow-hidden rounded-full">
+            <img
+              src="/Images/profile.jpg"
+              alt="Profile Pic"
+              width={1} // Aspect ratio's width
+              height={1} // Aspect ratio's height, keeping it 1:1
+              className="object-cover w-full h-full"
+            />
           </div>
 
           {/* Name */}
-          <div className="font-circular md:self-center w-[28rem]">
-            <h1 className="text-5xl text-text-dark font-bold tracking-wide">
+          <div className="font-circular md:self-center border-2 w-[34rem]">
+            <h1 className="text-6xl text-text-dark font-bold tracking-wide">
               Hi, I&apos;m <span className="text-text-light">Pedro.</span>
             </h1>
-            <h1 className="text-5xl text-text-dark font-bold">
+            <h1 className="text-6xl text-text-dark font-bold">
               I love to <span className="text-text-light">design</span> and{" "}
               <span className="text-text-light">develop</span> interfaces.
             </h1>
