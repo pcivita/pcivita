@@ -37,7 +37,7 @@ export default function Home() {
           <div className="w-56">
             <div className="w-full aspect-1 rounded-full overflow-hidden  border-white">
               <Image
-                src={"/Images/profilePic.JPG"}
+                src={"/Images/profile.JPG"}
                 alt="Profile Pic"
                 layout="responsive"
                 width={1} // Aspect ratio's width
