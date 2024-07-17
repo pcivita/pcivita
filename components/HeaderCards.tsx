@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ComponentCardProps } from "@/interfaces/card";
 
 export const ComponentContainer = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
@@ -22,7 +23,11 @@ export const ComponentContainer = () => {
   );
 };
 
-export const ComponentCard = ({ index, hoveredIndex, setHoveredIndex }) => {
+export const ComponentCard: React.FC<ComponentCardProps> = ({
+  index,
+  hoveredIndex,
+  setHoveredIndex,
+}) => {
   const isOpen = hoveredIndex === index;
   const isNotHovered = hoveredIndex !== null && hoveredIndex !== index;
 
