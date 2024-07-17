@@ -17,3 +17,7 @@
   font-weight: bold;
   font-style: normal;
 }
+
+.parent.isOpen {
+  width: 30%; /* Fill the entire width of the container */
+}
