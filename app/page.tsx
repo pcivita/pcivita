@@ -20,40 +20,44 @@ export default function Home() {
       flex
       flex-col
       bg-background-dark 
-      p-4 gap-4
-      md:gap-20
+
       md:flex-row-reverse
-      md:px-10
       md:justify-center
       md:py-20
+      border-2
       "
       >
-        {/* Image */}
-        <div className="w-1/4">
-          <div className="w-full aspect-1 rounded-full overflow-hidden border-4 border-white">
-            <Image
-              src={"/Images/profilePic.JPG"}
-              alt="Profile Pic"
-              layout="responsive"
-              width={1} // Aspect ratio's width
-              height={1} // Aspect ratio's height, keeping it 1:1
-            />
-          </div>
-        </div>
-
-        {/* Name */}
+        {/* Content Container */}
         <div
-          className="font-circular 	
-          md:self-center
-        md:w-1/2"
+          className="border-4 flex md:flex-row-reverse items-center
+        md:gap-20"
         >
-          <h1 className="text-5xl text-text-dark font-bold tracking-wide">
-            Hi, I&apos;m <span className="text-background-light">Pedro.</span>
-          </h1>
-          <h1 className="text-5xl text-text-dark font-bold">
-            I love to <span className="text-background-light">design</span> and{" "}
-            <span className="text-background-light">develop</span> interfaces.
-          </h1>
+          {/* Image */}
+          <div className="w-56">
+            <div className="w-full aspect-1 rounded-full overflow-hidden border-4 border-white">
+              <Image
+                src={"/Images/profilePic.JPG"}
+                alt="Profile Pic"
+                layout="responsive"
+                width={1} // Aspect ratio's width
+                height={1} // Aspect ratio's height, keeping it 1:1
+                quality={75} // Adjust quality as needed (default is 75)
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Name */}
+          <div className="font-circular md:self-center w-[28rem] border-4">
+            <h1 className="text-5xl text-text-dark font-bold tracking-wide">
+              Hi, I&apos;m <span className="text-background-light">Pedro.</span>
+            </h1>
+            <h1 className="text-5xl text-text-dark font-bold">
+              I love to <span className="text-background-light">design</span>{" "}
+              and <span className="text-background-light">develop</span>{" "}
+              interfaces.
+            </h1>
+          </div>
         </div>
       </div>
       {/* Body */}
