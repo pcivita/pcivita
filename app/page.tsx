@@ -43,11 +43,12 @@ export default function Home() {
         >
           <div className="w-80 h-80 overflow-hidden rounded-full border-4 border-background-light">
             <Image
-              src="/Images/profile.jpg"
+              src="/Images/profile.JPG"
               alt="Profile Pic"
               width={1000} // Aspect ratio's width
               height={1000} // Aspect ratio's height, keeping it 1:1
               className="object-cover w-full h-full"
+              priority
             />
           </div>
 
