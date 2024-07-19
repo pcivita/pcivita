@@ -22,6 +22,7 @@ const config: Config = {
         },
         text: {
           light: "#FFFFF1",
+          gray: "#B5B5A9",
           light_green: "#41916C",
           dark: "#081C14",
         },

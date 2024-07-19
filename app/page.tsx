@@ -3,15 +3,22 @@ import BentoGrid from "@/components/BentoGrid";
 import BentoMobile from "@/components/BentoMobile";
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons/component";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
-import { ComponentContainer } from "@/components/HeaderCards";
-import Navbar from "@/components/Navbar";
-import FlipLink from "@/components/FlipLink";
+import { motion, useInView } from "framer-motion";
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
+  const [firstAnimationComplete, setFirstAnimationComplete] = useState(false);
+
+  const handleFirstAnimationComplete = () => {
+    console.log("First animation completed");
+    setTimeout(() => {
+      console.log("1 second delay passed");
+      setFirstAnimationComplete(true);
+    }, 300); // 1 second delay
+  };
+
   return (
     <div className="flex flex-col">
       {/* Navbar */}
@@ -33,18 +40,6 @@ export default function Home() {
           className=" flex md:flex-row-reverse items-center
         md:gap-20"
         >
-          {/* Image */}
-          {/* <div className="w-56 h-56 border-2 rounded-full overflow-hidden">
-            <Image
-              src="/Images/profile.JPG"
-              alt="Profile Pic"
-              layout="responsive"
-              width={1} // Aspect ratio's width
-              height={2} // Aspect ratio's height, keeping it 1:1
-              className="object-fit w-full h-screen"
-              priority
-            />
-          </div> */}
           <div className="w-80 h-80 overflow-hidden rounded-full border-4 border-background-light">
             <Image
               src="/Images/profile.jpg"
@@ -56,22 +51,21 @@ export default function Home() {
           </div>
 
           {/* Name */}
-          <div className="font-circular md:self-center w-[34rem]">
-            <h1
-              className="text-6xl text-text-dark font-bold tracking-wide"
-              style={{
-                lineHeight: 1.2,
-              }}
-            >
-              Hi, I&apos;m <FlipLink>Pedro.</FlipLink>
-            </h1>
-            <h1 className="text-6xl text-text-dark font-bold">
-              I love to <FlipLink>design</FlipLink> and{" "}
-              <FlipLink>develop</FlipLink> interfaces.
-            </h1>
-
-            {/* <ComponentContainer /> */}
-          </div>
+          <motion.div className="font-circular md:self-center w-[38rem] min-h-52 border-2">
+            <AnimatedText
+              text={["Hi, I'm Pedro."]}
+              className="text-6xl font-bold tracking-wide"
+              once
+              onComplete={handleFirstAnimationComplete}
+            />
+            {firstAnimationComplete && (
+              <AnimatedText
+                text={["I love to design and", "develop interfaces."]}
+                className="text-6xl font-bold tracking-wide"
+                once
+              />
+            )}
+          </motion.div>
         </div>
       </div>
       {/* Body */}
@@ -109,3 +103,71 @@ export default function Home() {
     </div>
   );
 }
+
+type AnimatedTextProps = {
+  text: string | string[];
+  el?: keyof JSX.IntrinsicElements;
+  className?: string;
+  once?: boolean;
+  onComplete?: () => void;
+};
+
+const defaultAnimations = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
+export const AnimatedText = ({
+  text,
+  el: Wrapper = "p",
+  className,
+  once,
+  onComplete,
+}: AnimatedTextProps) => {
+  const textArray = Array.isArray(text) ? text : [text];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once });
+  const whiteWords = ["Pedro.", "develop", "design"];
+
+  return (
+    <Wrapper className={className}>
+      <motion.span
+        ref={ref}
+        aria-hidden
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        transition={{ staggerChildren: 0.05 }}
+        onAnimationComplete={onComplete}
+      >
+        {textArray.map((line) => (
+          <motion.span className="block" transition={{ delay: 1 }}>
+            {line.split(" ").map((word) => (
+              <span>
+                {word.split("").map((char) => (
+                  <motion.span
+                    className={`inline-block ${
+                      whiteWords.includes(word) ? "text-white" : ""
+                    }`}
+                    variants={defaultAnimations}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                <span className="inline-block">&nbsp; </span>
+              </span>
+            ))}
+          </motion.span>
+        ))}
+      </motion.span>
+    </Wrapper>
+  );
+};

@@ -16,7 +16,7 @@ const FlipLink = ({ children }) => {
     <motion.span
       initial="initial"
       whileHover="hovered"
-      className="text-background-light relative overflow-hidden whitespace-nowrap w-min inline-block  cursor-pointer border-2"
+      className="text-background-light relative overflow-hidden  whitespace-nowrap w-min inline-block  cursor-pointer"
       style={{
         lineHeight: 0.75,
       }}
