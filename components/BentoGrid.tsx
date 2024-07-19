@@ -45,7 +45,7 @@ export default function BentoGrid() {
           </motion.div>
         </Link>
         <Link
-          href={"/Muse"}
+          href="/Muse"
           className={`col-span-2 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
