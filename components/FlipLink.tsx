@@ -11,7 +11,7 @@ import {
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-const FlipLink = ({ children }) => {
+const FlipLink = ({ children }: { children: string }) => {
   return (
     <motion.span
       initial="initial"
