@@ -148,12 +148,13 @@ export const AnimatedText = ({
         transition={{ staggerChildren: 0.05 }}
         onAnimationComplete={onComplete}
       >
-        {textArray.map((line) => (
-          <motion.span className="block" transition={{ delay: 1 }}>
-            {line.split(" ").map((word) => (
-              <span>
-                {word.split("").map((char) => (
+        {textArray.map((line, index) => (
+          <motion.span key={index} className="block" transition={{ delay: 1 }}>
+            {line.split(" ").map((word, indexWord) => (
+              <span key={indexWord}>
+                {word.split("").map((char, indexChar) => (
                   <motion.span
+                    key={indexChar}
                     className={`inline-block ${
                       whiteWords.includes(word) ? "text-white" : ""
                     }`}
