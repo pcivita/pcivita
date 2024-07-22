@@ -36,3 +36,27 @@ export default function BentoMobile() {
     </div>
   );
 }
+
+{
+  /* Bento Intro */
+}
+{
+  /* <div className="grid grid-cols-2 gap-4 mb-4 border-2">
+          <div className="bg-background-light">
+            <h2 className="text-lg font-bold">Dates</h2>
+            <p>Sept - Dec 2023</p>
+          </div>
+          <div className="bg-background-light rounded-lg">
+            <h2 className="text-lg font-bold ">Project Type</h2>
+            <p>Mobile App</p>
+          </div>
+        </div>
+        <div>
+          <p className="text-base">
+            Turno was my 10 week long project for my class CS147. Its main
+            purpose was to truly make us learn and dive deep into the HCI field.
+            It allowed us to explore needfinding, prototyping, usability tests,
+            heuristic evaluation, and React Native development.
+          </p>
+        </div> */
+}

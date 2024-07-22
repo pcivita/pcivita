@@ -2,8 +2,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import ProjectCard from "./ProjectCard";
 
 export default function BentoGrid() {
+  const hoverTexts = [
+    "This is a short summary of my work with of Eave in just two sentences. I helped create a design system from the ground up, redesigned all pages and ultimately coded the frontend for the Project.",
+  ];
   return (
     <div className="flex h-screen items-center justify-center  py-10">
       <div className="grid h-full w-3/4 grid-cols-4 grid-rows-6 gap-4 ">
@@ -12,18 +16,7 @@ export default function BentoGrid() {
           className={`col-span-2 row-span-4 rounded-xl  border-slate-400/10 bg-neutral-100 
           dark:bg-neutral-900`}
         >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg bg-background-card "
-          >
-            <Image
-              src={"/Images/muse.svg"}
-              alt="hell"
-              layout="fill"
-              objectFit="contain"
-              className="p-4"
-            />
-          </motion.div>
+          <ProjectCard name={"Eave"} hoverText={hoverTexts[0]} />
         </Link>
 
         <Link
@@ -36,7 +29,7 @@ export default function BentoGrid() {
             className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
           >
             <Image
-              src={"/Images/turno.svg"}
+              src={"/Images/Muse.png"}
               alt="hell"
               layout="fill"
               objectFit="contain"
@@ -45,21 +38,29 @@ export default function BentoGrid() {
           </motion.div>
         </Link>
         <Link
-          href="/Muse"
+          href="/Turno"
           className={`col-span-2 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
+            className="flex flex-row justify-center relative h-full w-full overflow-hidden rounded-lg bg-text-light"
           >
-            <Image
-              src={"/Images/dfg.png"}
-              alt="hell"
-              layout="fill"
-              objectFit="contain"
-              className="p-4"
-            />
+            <div className="relative  h-full aspect-1 ">
+              {" "}
+              {/* Ensure the parent has defined dimensions */}
+              <Image
+                src="/Images/Turno.png"
+                alt="hell"
+                layout="fill"
+                objectFit="contain" // Maintains aspect ratio
+                className="py-4 border-black "
+              />
+            </div>
+            <div className="w-1/3 flex justify-start  items-center">
+              <h1 className="text-4xl font-bold text-turno-pink">Turno</h1>
+              {/* Additional text or content can go here */}
+            </div>
           </motion.div>
         </Link>
         {/* <div

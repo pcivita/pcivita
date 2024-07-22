@@ -16,15 +16,20 @@ const config: Config = {
       colors: {
         background: {
           light: "#F4F9FC",
+          light_green: "#B7E4C7",
           dark: "#41916C",
           card: "#1C4332",
           black: "#081C14",
+        },
+        turno: {
+          pink: "#FF7474",
         },
         text: {
           light: "#FFFFF1",
           gray: "#B5B5A9",
           light_green: "#41916C",
           dark: "#081C14",
+          eaveBlue: "#1980DF",
         },
         purple: "#7F00E0",
       },
