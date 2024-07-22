@@ -12,7 +12,7 @@ export default function BentoGrid() {
     <div className="flex h-screen items-center justify-center  py-10">
       <div className="grid h-full w-3/4 grid-cols-4 grid-rows-6 gap-4 ">
         <Link
-          href={"/Muse"}
+          href={"/Eave"}
           className={`col-span-2 row-span-4 rounded-xl  border-slate-400/10 bg-neutral-100 
           dark:bg-neutral-900`}
         >
@@ -29,11 +29,15 @@ export default function BentoGrid() {
             className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
           >
             <Image
-              src={"/Images/Muse.png"}
-              alt="hell"
-              layout="fill"
-              objectFit="contain"
-              className="p-4"
+              src="/Images/Muse.png"
+              alt="hello"
+              className="p-4" // Example: Apply padding with Tailwind CSS classes
+              width={500} // Example: Set the width of the image
+              height={500}
+              style={{
+                objectFit: "contain", // Example: Contain the image within its container
+                objectPosition: "center center", // Example: Center the image
+              }}
             />
           </motion.div>
         </Link>
@@ -51,10 +55,14 @@ export default function BentoGrid() {
               {/* Ensure the parent has defined dimensions */}
               <Image
                 src="/Images/Turno.png"
-                alt="hell"
-                layout="fill"
-                objectFit="contain" // Maintains aspect ratio
-                className="py-4 border-black "
+                alt="hello"
+                width={500} // Example: Set the width of the image
+                height={300}
+                className="p-4" // Example: Apply padding with Tailwind CSS classes
+                style={{
+                  objectFit: "contain", // Example: Contain the image within its container
+                  objectPosition: "center center", // Example: Center the image
+                }}
               />
             </div>
             <div className="w-1/3 flex justify-start  items-center">

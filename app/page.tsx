@@ -7,8 +7,9 @@ import { useState } from "react";
 import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
 import { motion } from "framer-motion";
-import { AnimatedText } from "@/components/AnimatedText";
+import { StaggerText } from "@/components/StaggerText";
 import { FaChevronDown } from "react-icons/fa";
+// import { AnimateReveal } from "@/components/AnimateReveal";
 
 export default function Home() {
   const [firstAnimationComplete, setFirstAnimationComplete] = useState(false);
@@ -60,16 +61,16 @@ export default function Home() {
 
           {/* Name */}
           <motion.div className="font-circular md:self-center w-[38rem] min-h-52">
-            <AnimatedText
+            <StaggerText
               text={["Hi, I'm Pedro."]}
               className="text-6xl font-bold"
               once
               onComplete={handleFirstAnimationComplete}
             />
             {firstAnimationComplete && (
-              <AnimatedText
-                text={["I love to design and", "develop interfaces."]}
+              <StaggerText
                 className="text-6xl font-bold"
+                text={["I love to design and", "develop interfaces."]}
                 once
               />
             )}
@@ -105,7 +106,7 @@ export default function Home() {
       <div className="bg-background-light_green w-full p-8">
         {/* Featured Work */}
         <div>
-          <h1 className="text-center text-text-light_green font-circular font-bold text-5xl mb-8">
+          <h1 className="text-center text-text-light_green font-circular font-bold text-5xl mt-10 mb-10">
             FEATURED WORK
           </h1>
         </div>

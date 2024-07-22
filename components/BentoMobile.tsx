@@ -14,14 +14,14 @@ export default function BentoMobile() {
           whileHover={{ scale: 1.02 }}
           className="flex flex-col items-center justify-center"
         >
-          <Image
+          {/* <Image
             src={"/Images/muse.svg"}
             alt="Muse"
             layout="responsive" // 'responsive' layout will respect the width of the parent, and the height will adjust to maintain the image's aspect ratio
             width={1} // Setting width and height to 1 maintains the aspect ratio
             height={1}
             className="w-full" // This will make the image take the full width of its parent
-          />
+          /> */}
 
           <div className="text-center">
             {" "}

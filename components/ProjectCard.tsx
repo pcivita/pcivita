@@ -12,18 +12,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, hoverText }) => {
       whileHover={{ scale: 1.02 }}
       className="relative flex flex-col justify-center h-full w-full overflow-hidden rounded-lg bg-text-light p-10"
     >
-      <div className="relative h-full aspect-1 border-2">
+      <div className="relative h-full aspect-1 ">
         {/* Ensure the parent has defined dimensions */}
         <Image
           src={`/Images/${name}.png`}
-          alt={`${name} project image`}
-          layout="fill"
-          objectFit="contain" // Maintains aspect ratio
-          className="py-4 border-black"
+          alt="hello"
+          fill={true}
+          className="p-4" // Example: Apply padding with Tailwind CSS classes
+          style={{
+            objectFit: "contain", // Example: Contain the image within its container
+            objectPosition: "center center", // Example: Center the image
+          }}
         />
       </div>
-      <div className="flex justify-center font-circular items-center border-2 mt-4">
-        <h1 className="text-4xl font-bold text-text-eaveBlue">{name}</h1>
+      <div className="flex justify-center font-circular items-center mt-4">
+        <h1 className="text-5xl font-bold text-text-eaveBlue">{name}</h1>
       </div>
       <motion.div
         whileHover={{ opacity: 1 }}

@@ -22,7 +22,7 @@ const defaultAnimations = {
   },
 };
 
-export const AnimatedText = ({
+export const StaggerText = ({
   text,
   el: Wrapper = "p",
   className,
