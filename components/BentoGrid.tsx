@@ -5,9 +5,7 @@ import Image from "next/image";
 import ProjectCard from "./ProjectCard";
 
 export default function BentoGrid() {
-  const hoverTexts = [
-    "This is a short summary of my work with of Eave in just two sentences. I helped create a design system from the ground up, redesigned all pages and ultimately coded the frontend for the Project.",
-  ];
+  const hoverTexts = ["This Website", "Flock", "Spiritwood", "dfg"];
   return (
     <div className="flex h-screen items-center justify-center  py-10">
       <div className="grid h-full w-3/4 grid-cols-4 grid-rows-6 gap-4 ">
@@ -16,7 +14,7 @@ export default function BentoGrid() {
           className={`col-span-2 row-span-4 rounded-xl  border-slate-400/10 bg-neutral-100 
           dark:bg-neutral-900`}
         >
-          <ProjectCard name={"Eave"} hoverText={hoverTexts[0]} />
+          <ProjectCard name={"Portfolio"} hoverText={hoverTexts[0]} />
         </Link>
 
         <Link
@@ -24,7 +22,7 @@ export default function BentoGrid() {
           className={`col-span-2 row-span-2 rounded-xl  border-slate-400/10 
           dark:bg-neutral-900`}
         >
-          <motion.div
+          {/* <motion.div
             whileHover={{ scale: 1.02 }}
             className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
           >
@@ -39,20 +37,21 @@ export default function BentoGrid() {
                 objectPosition: "center center", // Example: Center the image
               }}
             />
-          </motion.div>
+          </motion.div> */}
+          <ProjectCard name={"SpiritWood"} hoverText={hoverTexts[0]} />
         </Link>
         <Link
           href="/Turno"
           className={`col-span-2 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
-          <motion.div
+          <ProjectCard name={"Flock"} hoverText={hoverTexts[0]} />
+          {/* <motion.div
             whileHover={{ scale: 1.02 }}
             className="flex flex-row justify-center relative h-full w-full overflow-hidden rounded-lg bg-text-light"
           >
             <div className="relative  h-full aspect-1 ">
               {" "}
-              {/* Ensure the parent has defined dimensions */}
               <Image
                 src="/Images/Turno.png"
                 alt="hello"
@@ -66,17 +65,17 @@ export default function BentoGrid() {
               />
             </div>
             <div className="w-1/3 flex justify-start  items-center">
-              <h1 className="text-4xl font-bold text-turno-pink">Turno</h1>
-              {/* Additional text or content can go here */}
+              <h1 className="text-4xl font-bold text-turno-pink">Spiritwood</h1>
             </div>
-          </motion.div>
+          </motion.div> */}
         </Link>
-        {/* <div
-          className={`col-span-2 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 p-4
+        <Link
+          href="/Turno"
+          className={`col-span-4 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
-          Hello{" "}
-        </div> */}
+          <ProjectCard name={"dfg"} hoverText={hoverTexts[0]} />
+        </Link>
         {/* <div
           className={`col-span-3 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 p-4
           dark:bg-neutral-900`}

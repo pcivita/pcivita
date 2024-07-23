@@ -3,12 +3,16 @@ import BentoGrid from "@/components/BentoGrid";
 import BentoMobile from "@/components/BentoMobile";
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons/component";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
 import { motion } from "framer-motion";
 import { StaggerText } from "@/components/StaggerText";
 import { FaChevronDown } from "react-icons/fa";
+import MainProject from "@/components/MainProject";
+import { Reveal } from "@/components/Reveal";
+import React from "react";
+
 // import { AnimateReveal } from "@/components/AnimateReveal";
 
 export default function Home() {
@@ -34,30 +38,35 @@ export default function Home() {
        bg-background-dark"
       >
         {/* Content Container */}
-        <div
-          className="flex-grow flex justify-center
-        md:flex-row-reverse items-center md:gap-20"
-        >
-          <div className="relative w-96 h-96 p-8">
-            <motion.div
-              className="absolute inset-0 
-              w-full h-full rounded-full 
-              border-dashed border-4 
-              border-background-light"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div className="relative w-full h-full rounded-full overflow-hidden">
-              <Image
-                src="/Images/profile.JPG"
-                alt="SDSD"
-                width={1000}
-                height={1000}
-                className="object-cover w-full h-full"
-                priority
-              />
-            </motion.div>
-          </div>
+        <div className="flex-grow flex justify-center md:flex-row-reverse items-center md:gap-20">
+          {firstAnimationComplete ? (
+            <Reveal delay={0.01} duration={1}>
+              <div className="relative w-96 h-96 p-8">
+                <motion.div
+                  className="absolute inset-0 w-full h-full rounded-full border-dashed border-4 border-background-light"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 100,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+
+                <motion.div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/Images/profile.JPG"
+                    alt="SDSD"
+                    width={1000}
+                    height={1000}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </motion.div>
+              </div>
+            </Reveal>
+          ) : (
+            <div className="relative w-96 h-96 p-8"></div>
+          )}
 
           {/* Name */}
           <motion.div className="font-circular md:self-center w-[38rem] min-h-52">
@@ -68,11 +77,14 @@ export default function Home() {
               onComplete={handleFirstAnimationComplete}
             />
             {firstAnimationComplete && (
-              <StaggerText
-                className="text-6xl font-bold"
-                text={["I love to design and", "develop interfaces."]}
-                once
-              />
+              <Reveal delay={0.7} duration={0.8}>
+                <h1 className="text-6xl font-bold">
+                  I love to{" "}
+                  <span className="text-background-light">design</span> and{" "}
+                  <span className="text-background-light">develop</span>{" "}
+                  interfaces.
+                </h1>
+              </Reveal>
             )}
           </motion.div>
         </div>
@@ -89,25 +101,47 @@ export default function Home() {
           }}
         >
           {" "}
-          <motion.div
-            whileHover={{
-              scale: 1.2,
-            }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            animate={{ color: isClicked ? "#00FF00" : "#FFFFFF" }}
-          >
-            <FaChevronDown size={50} style={{ color: "white" }} />
-          </motion.div>
+          <Reveal delay={0.7}>
+            <motion.div
+              // whileHover={{
+              //   scale: 1.2,
+              // }}
+              // whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              animate={{ color: isClicked ? "#00FF00" : "#FFFFFF" }}
+            >
+              <FaChevronDown size={50} style={{ color: "white" }} />
+            </motion.div>
+          </Reveal>
         </motion.div>
       </div>
-
+      <MainProject
+        role={"DESIGN TECHNOLOGIST INTERN"}
+        project={"Eave"}
+        caption={
+          "After Eave’s global re-brand, I created long lasting identity and front end development through a design system and coding."
+        }
+      />
+      <MainProject
+        project={"Muse"}
+        role={"DESIGN TECHNOLOGIST INTERN"}
+        caption={
+          "After Eave’s global re-brand, I created long lasting identity and front end development through a design system and coding."
+        }
+      />
+      <MainProject
+        role={"DESIGN TECHNOLOGIST INTERN"}
+        project={"Turno"}
+        caption={
+          "After Eave’s global re-brand, I created long lasting identity and front end development through a design system and coding."
+        }
+      />
       {/* Body */}
-      <div className="bg-background-light_green w-full p-8">
+      <div className="bg-text-light w-full p-8">
         {/* Featured Work */}
         <div>
           <h1 className="text-center text-text-light_green font-circular font-bold text-5xl mt-10 mb-10">
-            FEATURED WORK
+            Other Projects
           </h1>
         </div>
 

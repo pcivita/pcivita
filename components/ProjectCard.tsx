@@ -10,7 +10,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, hoverText }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="relative flex flex-col justify-center h-full w-full overflow-hidden rounded-lg bg-text-light p-10"
+      className="relative flex flex-col justify-center h-full w-full overflow-hidden rounded-lg bg-background-light_green p-10"
     >
       <div className="relative h-full aspect-1 ">
         {/* Ensure the parent has defined dimensions */}
