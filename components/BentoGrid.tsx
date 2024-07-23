@@ -1,92 +1,41 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
 import ProjectCard from "./ProjectCard";
+import ProjectCardHorizontal from "./ProjectCardHorizontal";
 
 export default function BentoGrid() {
-  const hoverTexts = ["This Website", "Flock", "Spiritwood", "dfg"];
+  const hoverTexts = [
+    "Creating this website was an amazing exploration. It allowed me to learn about framer motion, hone in on my iteration and frontend skills. I am still constantly iterating and deploying it, hoping to make it more robust and polished. ",
+    "Spiritwood was my first serious exploration with Game Design. It taught me a lot about the user experience through playtesting, and the power of following best coding practices. It was also extremely fun.",
+
+    "dfg",
+  ];
   return (
     <div className="flex h-screen items-center justify-center  py-10">
       <div className="grid h-full w-3/4 grid-cols-4 grid-rows-6 gap-4 ">
-        <Link
-          href={"/Eave"}
+        <div
           className={`col-span-2 row-span-4 rounded-xl  border-slate-400/10 bg-neutral-100 
           dark:bg-neutral-900`}
         >
           <ProjectCard name={"Portfolio"} hoverText={hoverTexts[0]} />
-        </Link>
+        </div>
 
-        <Link
-          href={"/Muse"}
+        <div
           className={`col-span-2 row-span-2 rounded-xl  border-slate-400/10 
           dark:bg-neutral-900`}
         >
-          {/* <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative h-full w-full overflow-hidden rounded-lg  bg-background-card"
-          >
-            <Image
-              src="/Images/Muse.png"
-              alt="hello"
-              className="p-4" // Example: Apply padding with Tailwind CSS classes
-              width={500} // Example: Set the width of the image
-              height={500}
-              style={{
-                objectFit: "contain", // Example: Contain the image within its container
-                objectPosition: "center center", // Example: Center the image
-              }}
-            />
-          </motion.div> */}
           <ProjectCard name={"SpiritWood"} hoverText={hoverTexts[0]} />
-        </Link>
+        </div>
         <div
           className={`col-span-2 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
-          <ProjectCard name={"Flock"} hoverText={hoverTexts[0]} />
-          {/* <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="flex flex-row justify-center relative h-full w-full overflow-hidden rounded-lg bg-text-light"
-          >
-            <div className="relative  h-full aspect-1 ">
-              {" "}
-              <Image
-                src="/Images/Turno.png"
-                alt="hello"
-                width={500} // Example: Set the width of the image
-                height={300}
-                className="p-4" // Example: Apply padding with Tailwind CSS classes
-                style={{
-                  objectFit: "contain", // Example: Contain the image within its container
-                  objectPosition: "center center", // Example: Center the image
-                }}
-              />
-            </div>
-            <div className="w-1/3 flex justify-start  items-center">
-              <h1 className="text-4xl font-bold text-turno-pink">Spiritwood</h1>
-            </div>
-          </motion.div> */}
+          <ProjectCardHorizontal name={"Flock"} hoverText={hoverTexts[0]} />
         </div>
-        <Link
-          href="/Turno"
+        <div
           className={`col-span-4 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
           <ProjectCard name={"Develop For Good"} hoverText={hoverTexts[0]} />
-        </Link>
-        {/* <div
-          className={`col-span-3 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 p-4
-          dark:bg-neutral-900`}
-        >
-          BNA{" "}
         </div>
-        <div
-          className={`col-span-1 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 p-4
-          dark:bg-neutral-900`}
-        >
-          VIDEO GAMES{" "}
-        </div> */}
       </div>
     </div>
   );

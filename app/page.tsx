@@ -119,21 +119,21 @@ export default function Home() {
         role={"DESIGN TECHNOLOGIST INTERN"}
         project={"Eave"}
         caption={
-          "After Eave’s global re-brand, I created long lasting identity and front end development through a design system and coding."
+          "As Eave's First hire, I was tasked with Conceptualized and implemented Eave's Design System. Redesigned and programmed screens and product flows. "
         }
       />
       <MainProject
         project={"Muse"}
-        role={"DESIGN TECHNOLOGIST INTERN"}
+        role={"CO-FOUNDER"}
         caption={
-          "After Eave’s global re-brand, I created long lasting identity and front end development through a design system and coding."
+          "Muse is a Social Media Arts Platform built as part of my Stanford Capstone Project. With amazing UI the project aims to revolutionize how we interact with museums. It won third place out of 40 team in the Stanford Software Fair."
         }
       />
       <MainProject
         role={"DESIGN TECHNOLOGIST INTERN"}
         project={"Turno"}
         caption={
-          "After Eave’s global re-brand, I created long lasting identity and front end development through a design system and coding."
+          "Turno is a mobile app that empowers users to overcome decision paralysis & establish long-term habits. The project served as the culmination of what I learned in"
         }
       />
       {/* Body */}

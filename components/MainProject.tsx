@@ -48,26 +48,28 @@ export default function MainProject({
           </Reveal>
         </div>
         {/* Right Side */}
-        <div className="w-1/3 pt-4">
+        <div className="w-1/3">
           <Reveal color={project} width={"w-full"}>
-            <div>{caption}</div>
+            <div className="text-xl">{caption}</div>
           </Reveal>
         </div>
       </div>
 
       {/* Image Container */}
       <div className="flex items-center justify-center h-full">
-        <Image
-          src={`/Images/${project}.png`}
-          alt="hello"
-          className="p-4"
-          width={500}
-          height={500}
-          style={{
-            objectFit: "contain",
-            objectPosition: "center center",
-          }}
-        />
+        <Reveal color={project}>
+          <Image
+            src={`/Images/${project}.png`}
+            alt="hello"
+            className="p-4"
+            width={500}
+            height={500}
+            style={{
+              objectFit: "contain",
+              objectPosition: "center center",
+            }}
+          />
+        </Reveal>
       </div>
 
       {/* Horizontal Line */}
