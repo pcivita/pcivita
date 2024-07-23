@@ -40,8 +40,7 @@ export default function BentoGrid() {
           </motion.div> */}
           <ProjectCard name={"SpiritWood"} hoverText={hoverTexts[0]} />
         </Link>
-        <Link
-          href="/Turno"
+        <div
           className={`col-span-2 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
@@ -68,13 +67,13 @@ export default function BentoGrid() {
               <h1 className="text-4xl font-bold text-turno-pink">Spiritwood</h1>
             </div>
           </motion.div> */}
-        </Link>
+        </div>
         <Link
           href="/Turno"
           className={`col-span-4 row-span-2 rounded-xl  
           dark:bg-neutral-900`}
         >
-          <ProjectCard name={"dfg"} hoverText={hoverTexts[0]} />
+          <ProjectCard name={"Develop For Good"} hoverText={hoverTexts[0]} />
         </Link>
         {/* <div
           className={`col-span-3 row-span-2 rounded-xl  border-slate-400/10 bg-neutral-100 p-4
