@@ -31,8 +31,33 @@ const ProjectCardHorizontal: React.FC<ProjectCardProps> = ({
           }}
         />
       </div>
-      <div className="w-1/3 flex justify-start  items-center">
+      <div className="w-1/3 flex justify-start font-circular  items-center">
         <h1 className="text-5xl font-bold ">{name}</h1>
+        <motion.div
+          whileHover={{ opacity: 1 }}
+          className="absolute  w-full h-full inset-0 font-circular flex flex-col items-start gap-2 justify-center bg-black bg-opacity-90 opacity-0 transition-opacity duration-300
+        p-10"
+        >
+          <h1 className="text-white text-3xl	font-circular font-bold ">
+            {" "}
+            {name}{" "}
+          </h1>
+          <h2 className="text-white text-lg font-circular leading-tight">
+            {hoverText}
+          </h2>
+          <div className="flex flex-row gap-4 text-lg font-circular">
+            <div
+              className={`mt-2 bg-background-green w-fit text-blue px-4 py-1 rounded-full font-bold`}
+            >
+              <h1 className={`text-white`}> Figma </h1>
+            </div>
+            <div
+              className={`mt-2 bg-background-dark w-fit text-blue px-4 py-1 rounded-full font-bold`}
+            >
+              <h1 className={`text-white`}> Figma </h1>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );

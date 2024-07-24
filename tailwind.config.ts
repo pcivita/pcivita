@@ -17,6 +17,7 @@ const config: Config = {
         background: {
           light: "#F4F9FC",
           light_green: "#B7E4C7",
+          green: "#73C69D",
           dark: "#41916C",
           card: "#1C4332",
           black: "#081C14",
