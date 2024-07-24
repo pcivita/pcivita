@@ -16,23 +16,31 @@ const bgClassMap: { [key: string]: string } = {
   Muse: "bg-text-muse",
 };
 
+const linkMap: { [key: string]: string } = {
+  Website: "https://www.eave.fyi/",
+  Report: "/Images/TurnoReport.pdf",
+  Github: "https://github.com/cs210/2024-Muse-Native",
+};
+
 export default function MainProject({
   role,
   project,
   caption,
   caption2,
   button,
+  link,
 }: {
   role: string;
   project: string;
   caption: string;
   caption2?: string;
   button?: string;
+  link: string;
 }) {
   return (
     <div className="flex flex-col min-h-screen bg-text-light px-4 md:px-48 pt-20 pb-0 overflow-hidden">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between border-2">
+      <div className="flex flex-col md:flex-row justify-between">
         {/* Left Side */}
         <div className="flex-col flex gap-4">
           <Reveal color={project}>
@@ -47,13 +55,11 @@ export default function MainProject({
                   objectPosition: "center",
                 }}
               />
-              <a href="https://eave.fyi">
-                <h1
-                  className={`text-3xl md:text-7xl font-bold font-circular ${colorClassMap[project]}`}
-                >
-                  {project}
-                </h1>
-              </a>
+              <h1
+                className={`text-3xl md:text-7xl font-bold font-circular ${colorClassMap[project]}`}
+              >
+                {project}
+              </h1>
             </div>
           </Reveal>
           <Reveal color={project}>
@@ -77,12 +83,22 @@ export default function MainProject({
               )}
             </>
           </Reveal>
-          <FlipLink> Github </FlipLink>
+          <Reveal color={project} width={"w-fit"}>
+            <div className={`mt-4 ${colorClassMap[project]}`}>
+              <a
+                href={`${linkMap[link]}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FlipLink> {link} </FlipLink>
+              </a>
+            </div>
+          </Reveal>
         </div>
       </div>
 
       {/* Image Container */}
-      <div className="flex items-center justify-center h-full mt-4 overflow-hidden border-2">
+      <div className="flex items-center justify-center h-full mt-4 overflow-hidden ">
         <Reveal color={project}>
           <Image
             src={`/Images/${project}.png`}

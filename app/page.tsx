@@ -3,7 +3,7 @@ import BentoGrid from "@/components/BentoGrid";
 import BentoMobile from "@/components/BentoMobile";
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons/component";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "react-social-icons/linkedin";
 import "react-social-icons/mailto";
 import { motion } from "framer-motion";
@@ -118,23 +118,32 @@ export default function Home() {
       <MainProject
         role={"DESIGN TECHNOLOGIST INTERN"}
         project={"Eave"}
-        caption={
-          "As Eave's First hire, I was tasked with Conceptualized and implemented Eave's Design System. Redesigned and programmed screens and product flows. "
+        caption={"Conceptualized and implemented Eave's Design System."}
+        caption2={
+          "Currently redesigning and coding dashboard screens and product flows."
         }
+        button={"Product in Development"}
+        link={"Website"}
       />
       <MainProject
         project={"Muse"}
         role={"CO-FOUNDER"}
-        caption={
-          "Muse is a Social Media Arts Platform built as part of my Stanford Capstone Project. With amazing UI the project aims to revolutionize how we interact with museums. It won third place out of 40 team in the Stanford Software Fair."
-        }
+        caption={"Founder and lead programmer of Social Media Arts Platform."}
+        caption2="Developed both app infrastructure and GTM strategy."
+        button={"3rd Place at Stanford Software Fair"}
+        link={"Github"}
       />
       <MainProject
-        role={"DESIGN TECHNOLOGIST INTERN"}
+        role={"PRODUCT ENGINEER"}
         project={"Turno"}
         caption={
-          "Turno is a mobile app that empowers users to overcome decision paralysis & establish long-term habits. The project served as the culmination of what I learned in"
+          "Conducted interviews, created prototypes, and programmed Turno."
         }
+        caption2={
+          "From Heuristic Rvaluations to Usability Tests, thoroughly aplied Stanford's Design Thinking Process."
+        }
+        button={"4th Place in CS147 Expo"}
+        link={"Report"}
       />
       {/* Body */}
       <div className="bg-text-light w-full p-8">

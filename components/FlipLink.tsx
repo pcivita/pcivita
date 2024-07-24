@@ -3,18 +3,19 @@ import { motion } from "framer-motion";
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-const FlipLink = ({ children }: { children: string }) => {
+const FlipLink = ({ children }: { children: string | string[] }) => {
+  const childString = Array.isArray(children) ? children.join("") : children;
   return (
     <motion.span
       initial="initial"
       whileHover="hovered"
-      className="text-background-dark underline relative overflow-hidden  whitespace-nowrap w-min inline-block  cursor-pointer"
+      className="text-xl underline relative overflow-hidden  whitespace-nowrap w-min inline-block font-bold cursor-pointer"
       style={{
         lineHeight: 1.3,
       }}
     >
       <div>
-        {children.split("").map((l: string, i: number) => (
+        {childString.split("").map((l: string, i: number) => (
           <motion.span
             variants={{
               initial: {
@@ -37,7 +38,7 @@ const FlipLink = ({ children }: { children: string }) => {
         ))}
       </div>
       <div className="absolute inset-0 underline">
-        {children.split("").map((l, i) => (
+        {childString.split("").map((l: string, i: number) => (
           <motion.span
             variants={{
               initial: {
