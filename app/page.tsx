@@ -137,10 +137,10 @@ export default function Home() {
         role={"PRODUCT ENGINEER"}
         project={"Turno"}
         caption={
-          "Conducted interviews, created prototypes, and programmed Turno."
+          "Lead Needfinding, Prototyping, and Programming process for Turno."
         }
         caption2={
-          "From Heuristic Rvaluations to Usability Tests, thoroughly aplied Stanford's Design Thinking Process."
+          "Thoroughly applied Stanford's Design Thinking Process: from Heuristic Evaluations to Usability Tests."
         }
         button={"4th Place in CS147 Expo"}
         link={"Report"}
