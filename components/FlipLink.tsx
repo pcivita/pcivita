@@ -1,13 +1,5 @@
-import { MotionValue, motion } from "framer-motion";
-import {
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  AwaitedReactNode,
-  Key,
-  useState,
-} from "react";
+import { motion } from "framer-motion";
+
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
@@ -16,9 +8,9 @@ const FlipLink = ({ children }: { children: string }) => {
     <motion.span
       initial="initial"
       whileHover="hovered"
-      className="text-background-light relative overflow-hidden  whitespace-nowrap w-min inline-block  cursor-pointer"
+      className="text-background-dark underline relative overflow-hidden  whitespace-nowrap w-min inline-block  cursor-pointer"
       style={{
-        lineHeight: 0.75,
+        lineHeight: 1.3,
       }}
     >
       <div>
@@ -37,14 +29,14 @@ const FlipLink = ({ children }: { children: string }) => {
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block"
+            className="inline-block underline"
             key={i}
           >
             {l}
           </motion.span>
         ))}
       </div>
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 underline">
         {children.split("").map((l, i) => (
           <motion.span
             variants={{
@@ -60,7 +52,7 @@ const FlipLink = ({ children }: { children: string }) => {
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block"
+            className="inline-block underline"
             key={i}
           >
             {l}

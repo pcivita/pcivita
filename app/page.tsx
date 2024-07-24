@@ -140,7 +140,7 @@ export default function Home() {
       <div className="bg-text-light w-full p-8">
         {/* Featured Work */}
         <div>
-          <h1 className="text-center text-text-light_green font-circular font-bold text-5xl mt-10 mb-10">
+          <h1 className="text-center text-text-light_green font-circular font-bold text-5xl mt-10 mb-10 ">
             Other Projects
           </h1>
         </div>

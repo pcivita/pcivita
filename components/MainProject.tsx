@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
+import FlipLink from "./FlipLink";
 
 const colorClassMap: { [key: string]: string } = {
   Eave: "text-text-eave",
@@ -8,19 +9,30 @@ const colorClassMap: { [key: string]: string } = {
   Muse: "text-text-muse",
 };
 
+const bgClassMap: { [key: string]: string } = {
+  Eave: "bg-text-eave",
+  Website: "bg-background-dark",
+  Turno: "bg-turno-pink",
+  Muse: "bg-text-muse",
+};
+
 export default function MainProject({
   role,
   project,
   caption,
+  caption2,
+  button,
 }: {
   role: string;
   project: string;
   caption: string;
+  caption2?: string;
+  button?: string;
 }) {
   return (
-    <div className="flex flex-col h-screen bg-text-light px-48 pt-20 pb-0">
+    <div className="flex flex-col min-h-screen bg-text-light px-4 md:px-48 pt-20 pb-0 overflow-hidden">
       {/* Header */}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col md:flex-row justify-between border-2">
         {/* Left Side */}
         <div className="flex-col flex gap-4">
           <Reveal color={project}>
@@ -35,28 +47,42 @@ export default function MainProject({
                   objectPosition: "center",
                 }}
               />
-              <h1
-                className={`text-7xl font-bold font-circular ${colorClassMap[project]}`}
-              >
-                {" "}
-                {project}{" "}
-              </h1>
+              <a href="https://eave.fyi">
+                <h1
+                  className={`text-3xl md:text-7xl font-bold font-circular ${colorClassMap[project]}`}
+                >
+                  {project}
+                </h1>
+              </a>
             </div>
           </Reveal>
           <Reveal color={project}>
-            <h3 className="text-xl"> {role} </h3>
+            <>
+              <h3 className="text-lg md:text-xl"> {role} </h3>
+              <div
+                className={`mt-2 ${bgClassMap[project]} w-fit text-blue px-2 rounded-md font-bold`}
+              >
+                <h1 className={`text-white`}>{button} </h1>
+              </div>
+            </>
           </Reveal>
         </div>
         {/* Right Side */}
-        <div className="w-1/3">
+        <div className="w-full md:w-1/3 mt-4 md:mt-0">
           <Reveal color={project} width={"w-full"}>
-            <div className="text-xl">{caption}</div>
+            <>
+              <div className="text-lg md:text-xl">{caption}</div>
+              {caption2 && (
+                <div className="text-lg md:text-xl mt-2 ">{caption2}</div>
+              )}
+            </>
           </Reveal>
+          <FlipLink> Github </FlipLink>
         </div>
       </div>
 
       {/* Image Container */}
-      <div className="flex items-center justify-center h-full">
+      <div className="flex items-center justify-center h-full mt-4 overflow-hidden border-2">
         <Reveal color={project}>
           <Image
             src={`/Images/${project}.png`}
